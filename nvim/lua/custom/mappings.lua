@@ -18,11 +18,29 @@ M.dap = {
       end,
       "Add breakpoint at line"
     },
-    ["<leader>dc"] = {
+    ["<F5>"] = {
       function ()
         require('dap').continue()
       end,
       "Continue debug"
+    },
+    ["<F2>"] = {
+      function ()
+        require('dap').step_over()
+      end,
+      "Debugger step over"
+    },
+    ["<F3>"] = {
+      function ()
+        require('dap').step_into()
+      end,
+      "Debugger step into"
+    },
+    ["<F4>"] = {
+      function ()
+        require('dap').step_out()
+      end,
+      "Debugger step out"
     },
     ["<leader>dus"] = {
       function ()
