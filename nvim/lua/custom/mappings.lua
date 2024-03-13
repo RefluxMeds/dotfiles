@@ -20,9 +20,12 @@ M.dap = {
     },
     ["<F5>"] = {
       function ()
+        if vim.fn.filereadable(".vscode/launch.json") then
+          require('dap.ext.vscode').load_launchjs(nil, { go = {'go'} })
+        end
         require('dap').continue()
       end,
-      "Continue debug"
+      "Continue start/debug"
     },
     ["<F2>"] = {
       function ()
